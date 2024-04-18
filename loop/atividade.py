@@ -1,22 +1,41 @@
 #Ex1 
 '''nota = int(input("Digite a nota de 0 a 10: "))
 while nota < 0 or nota > 10:
-    nota = int(input("Digite a nota de 0 a 10: "))
+    nota = input("Digite a nota de 0 a 10: ")
 
-print(f'a nota é {nota}')'''
+print(f'a nota é {notaInt}')
+print(type(notaInt))'''
+
+'''nota = input("Digite a nota de 0 a 10: ")
+while not nota.isnumeric():
+    nota = input("Digite a nota de 0 a 10: ")
+
+n = int(nota)
+
+while n<0  or n > 10:
+    n = input("Digite a nota de 0 a 10: ")
+print(f'a nota é {n}')'''
+
 
 #Ex2
 '''nome = input("Nome: ")
 while len(nome) <= 3:
     nome = input("Nome: ")
 
-idade = int(input("idade: "))
+id = input("idade: ")
+while not id.isnumeric():
+    id = input("idade: ")
+idade = int(id)
 while idade < 0 or idade>150:
     idade = int(input("idade: "))
 
-salario = int(input("Salário: "))
+
+sal = input("Salário: ")
+while not sal.isnumeric():
+    sal = input("Salário: ")
+salario = int(sal)
 while salario < 0:
-    salario = int(input("Salário: "))
+    salario = input("Salário: ")
 
 sexo = input("Sexo(f/m): ")
 while sexo!='f' and sexo !='m':
@@ -24,11 +43,12 @@ while sexo!='f' and sexo !='m':
 
 EstadoCivil = input("s, c, v, d: ")
 while EstadoCivil !='s' and EstadoCivil !='c' and EstadoCivil !='v' and EstadoCivil !='d':
-    EstadoCivil = input("s, c, v, d")
+    EstadoCivil = input("s, c, v, d: ")
 
 print(f'nome: {nome}')
 print(f'idade: {idade}')
 print(f'salario: {salario}')
+
 print(f'sexo: {sexo}')
 print(f'Estado Civil: {EstadoCivil}')'''
 
@@ -83,7 +103,10 @@ print(ano)'''
 '''cont = 0
 soma = 0
 while cont < 5:
-    nota = int(input("Nota: "))
+    n = input("Nota: ")
+    while not n.isnumeric:
+        n = input("Nota: ")
+    nota = int(n)
     cont += 1
     soma += nota
         
@@ -91,8 +114,8 @@ print(f'soma: {soma}')
 print(f'media: {soma//5}')'''
 
 #Ex5 ++
-'''A = int(input("A: "))
-B = int(input("B: "))
+'''A = int(input("Primeiro: "))
+B = int(input("Ultimo: "))
 i = A
 while i<B-1:
     i += 1
@@ -111,13 +134,15 @@ print(nome)
 '''
 
 #Ex7
-'''numero = int(input("Tabuada do "))
+'''num = input("Tabuada do ")
+while not num.isnumeric():
+    num = input("Tabuada do ")
+numero = int(num)
 i = 0
 while i<10:
     i+=1
     tabuada = numero*i
-    print(f'{numero}X{i} = {tabuada}')
-'''
+    print(f'{numero}X{i} = {tabuada}')'''
 
 #Ex8 +++
 '''n = int(input('Quantos termos quer? '))
@@ -136,9 +161,12 @@ while i < n: #enquanto o contador for menor que a sequencia pedida:
 '''par = 0
 i = 0
 while True:
-    num = int(input("Número: "))
+    num = input("Número: ")
+    while not num.isnumeric():
+        num = input("Número: ")
+    numero = int(num)
     i += 1
-    if num % 2 == 0:
+    if numero % 2 == 0:
         par += 1
     if i >= 10:
         break
@@ -166,28 +194,38 @@ print(fat)
 
 #Ex11
 '''while True:
-    num = int(input("Diga um número: "))
-    if num % 2 != 0 and num % 3 != 0  and num % 5 != 0:
+    num = input("Diga um número: ")
+    while not num.isnumeric():
+        num = input("Diga um número: ")
+    numero = int(num)
+    if numero % 2 != 0 and numero % 3 != 0  and numero % 5 != 0:
         print("É primo")
         break
     else:
-        print("não é primo")
-'''
+        print("não é primo")'''
+
 #Ex12
 '''i = 0
 soma = 0
-n = int(input("Quantas notas deseja?"))
+n = input("Quantas notas deseja?")
+while not n.isnumeric():
+    n = input("Quantas notas deseja?")
+notas = int(n)
 while True:
     nota = int(input("Nota: "))
     i += 1
     soma += nota
-    if i >= n:
+    if i >= notas:
         break
-media = soma / n
-print(media)'''
+media = soma / notas
+print(f'média: {media}')
+'''
 
 #Ex13
-'''salario = int(input("Digite se salário: "))
+'''sal = input("Digite se salário: ")
+while not sal.isnumeric():
+    sal = input("Digite se salário: ")
+salario = int(sal)
 aumento = 1.5/100
 ano = 1996
 while ano < 2024:
@@ -195,31 +233,34 @@ while ano < 2024:
     aumento *= 2
     salario *= 1 + aumento
 
-    print(ano, f'- {aumento:.2f}% - R${salario:.2f}')'''
-    
+    print(ano, f'- {aumento:.2f}% - R${salario:.2f}')
+    '''
 #Ex14
-'''i = 0
+i = 0
 a = 0
 b = 0
 c = 0
 d = 0
 while True:
-    num = int(input("Número: "))
+    num = input("Número: ")
+    while not num.isnumeric():
+        num = input("Número: ")
+    numero = int(num)
     i += 1
-    if num < 0:
+    if numero < 0:
         break
-    if num <= 25:
+    if numero <= 25:
         a += 1
-        print(f"o número {num} foi o {a} número de 0-25")
-    elif num <= 50:
+        print(f"o número {numero} foi o {a} número de 0-25")
+    elif numero <= 50:
         b += 1
-        print(f"o número {num} foi o {b} número de 26-50")
-    elif num <=75:
+        print(f"o número {numero} foi o {b} número de 26-50")
+    elif numero <=75:
         c += 1
-        print(f"o número {num} foi o {c} número de 51-75")
-    elif num <= 100:
+        print(f"o número {numero} foi o {c} número de 51-75")
+    elif numero <= 100:
         d += 1
-        print(f"o número {num} foi o {d} número de 76-100")'''
+        print(f"o número {numero} foi o {d} número de 76-100")
 
 #Ex15
 '''i = 0

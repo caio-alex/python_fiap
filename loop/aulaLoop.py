@@ -54,11 +54,11 @@ if idoso == 'SIM':
 else:
     print('paia')'''
 
-while True:
+'''while True:
     idoso = input("Você idoso? sim/não: ").upper()
     if idoso != 'SIM' or idoso != 'NÃO':
         break
-
+'''
 '''valido = False
 idoso = input("Você idoso? sim/não: ").upper()
 while not (idoso == 'SIM' or idoso == 'NÃO'):
@@ -69,9 +69,15 @@ if idoso == 'SIM':
 else:
     print('paia')
 '''
-'''
+
 num = input("digite um número: ")
 while not num.isnumeric():
     num = input("digite um número: ")
 print(num)
-print(type(num))'''
+print(type(num))
+n = int(num)
+print(n)
+print(type(n))
+while n<0:
+    n = input("digite um número: ")
+print(n)
