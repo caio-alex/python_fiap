@@ -2,6 +2,10 @@ total = 0
 italia = 3
 espanha = 4
 chileno = 5
+precoItalia = 40
+precoEspanha = 60
+precoChileno= 70
+frete = 20
 print("Seja bem-vindo(a) a vinheria Agnello!")
 while True:
     ano_nasc = input("Diga o seu ano de nascimento: ")
@@ -19,7 +23,7 @@ else:
     while True:
         print()
         print("compras acima de R$100 é frete grátis")
-        print(f"Opções de vinhos\n [1]Vinho Itália R$40 Em estoque: {italia} | [2]Vinho Espanha R$60 Em estoque: {espanha}| [3]Vinho Chileno R$70 Em estoque: {chileno}")
+        print(f"Opções de vinhos\n [1]Vinho Itália R$40 Em estoque: {italia}\n [2]Vinho Espanha R$60 Em estoque: {espanha}\n [3]Vinho Chileno R$70 Em estoque: {chileno}\n")
         
         vinho = input("Insira o número do vinho: ")
         if vinho.isnumeric():
@@ -30,7 +34,7 @@ else:
             quantidade = int(quantidade)
         
         if vinho == 1:
-            valor = 40*quantidade
+            valor = precoItalia*quantidade
             italia -= quantidade
             if italia < 0:
                 print("esgotado")    
@@ -41,7 +45,7 @@ else:
                 continue
 
         elif vinho == 2:
-            valor = 60*quantidade
+            valor = precoEspanha*quantidade
             espanha -= quantidade
             if espanha < 0:
                 print("esgotado")
@@ -52,7 +56,7 @@ else:
                 continue
 
         elif vinho == 3:
-            valor = 70*quantidade
+            valor = precoChileno*quantidade
             chileno -= quantidade
             if chileno < 0:
                 print("esgotado")
@@ -77,7 +81,7 @@ else:
 
             else:
                 print("Frete de R$20")
-                totalFrete = total+20
+                totalFrete = total+frete
                 print(f"O valor total da compra com frete foi de R${totalFrete} no endereço {endereco}")
             print("Obrigado pela compra!")
             break
