@@ -99,4 +99,4 @@ precos = [10, 20, 100000, 50, 5]
 carros = ['up', 'uno', 'celta', 'gol', 'kombi']
 local_carro = encontra_maior(precos)
 print(f"o carro {carros[local_carro]} "
-      f"custa {precos[local_carro]}")
+      f"custa{precos[local_carro]}")
